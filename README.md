@@ -8,7 +8,7 @@ Make sure your PATH env variable, the 'user' one, has the following entries:
 - C:\Program Files\w64devkit\bin
 - C:\Program Files\clangd\bin
 
-Move w64devkit to the top of the list, to ensure that Neovim picks that compiler over anything else that might be available.
+Move `w64devkit` to the top of the list, to ensure that Neovim picks that compiler over anything else that might be available.
 
 I installed [Neovim for Windows](https://github.com/neovim/neovim/blob/master/INSTALL.md) and then followed the [lazvim install instructions](https://www.lazyvim.org/installation) for Windows.
 
@@ -38,3 +38,13 @@ For the Javascript/Typescript LSP, I needed to install the following:
 npm install -g typescript-language-server
 npm install -g typescript
 ```
+
+In this repo, the key files and folders to focus on are:
+
+- `/lsp` folder
+   This is where the .lua files for each language server I want to use can be found.
+
+- `lua/core/lsp.lua`
+   This is where each lsp is enabled. I also configure the virtual text options, so that warnings/errors appear in file windows.
+
+Notice in `init/lua` that I call `require("core.lsp")` to make sure that the lsp.lua file is processed.
