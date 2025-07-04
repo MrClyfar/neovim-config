@@ -47,3 +47,4 @@ vim.opt.scrolloff = 10
 -- vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
