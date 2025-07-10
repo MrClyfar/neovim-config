@@ -5,6 +5,7 @@ vim.lsp.enable({
   "docker_compose",
   "typescript",
   "lua_ls",
+  "bashls",
 })
 
 vim.diagnostic.config({
