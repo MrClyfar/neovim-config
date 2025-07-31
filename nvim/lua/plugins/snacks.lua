@@ -7,7 +7,7 @@ return {
         position = "float",
         -- width = 0.8,    -- optional
         -- height = 0.8,   -- optional
-        -- border = "rounded", -- optional
+        border = "rounded", -- optional
       },
     },
     picker = {

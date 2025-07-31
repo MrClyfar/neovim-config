@@ -6,3 +6,6 @@
 --vim.keymap.del("n", "t")
 --vim.keymap.del("x", "t")
 --vim.keymap.del("o", "t")
+
+--vim.keymap('n', '<F8>', ':TagbarToggle<CR>', { noremap = true, silent = true })
+
