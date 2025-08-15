@@ -15,9 +15,16 @@ return {
         fullscreen = true, -- fullscreen for all pickers by default
       },
       sources = {
+	    grep = {
+		  hidden = true, -- Include hidden files in searches          
+          case_sens = false, -- New! Define custom variable
+          toggles = {
+            case_sens = 's',
+          }
+		},
         explorer = {
           layout = { fullscreen = false }, -- override for explorer picker
-        },
+        }
       },
     }, 
   },
