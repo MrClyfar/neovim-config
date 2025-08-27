@@ -4,7 +4,8 @@ return {
     terminal = {
       shell = { "C:\\Program Files\\Git\\bin\\bash.exe" },      
       win = {
-        position = "float",
+        --position = "float",
+		position = "bottom",
         -- width = 0.8,    -- optional
         -- height = 0.8,   -- optional
         border = "rounded", -- optional
