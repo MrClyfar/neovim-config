@@ -6,6 +6,8 @@ vim.lsp.enable({
   "typescript",
   "lua_ls",
   "bashls",
+  "pyright",
+  "jsonls"
 })
 
 vim.diagnostic.config({
