@@ -1,78 +1,73 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
-require("core.lsp")
-
-vim.cmd("colorscheme kanagawa")
-vim.cmd("let g:kanagawa_transparent_bg = 1")
-
---vim.cmd("colorscheme nordfox")
---vim.cmd("let g:nordfox_transparent_bg = 1")
-
---vim.cmd.colorscheme('naysayer')
---vim.cmd("let g:naysayer_transparent_bg = 1")
-
---vim.cmd("colorscheme nightfox")
---vim.cmd("let g:nightfox_transparent_bg = 1")
-
-vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
-
---vim.lsp.inline_completion.enable(true)
-
-local dap = require('dap')
+local dap = require("dap")
 local dapui = require("dapui")
+local utils = require("dap.utils")
 
-require("dap").adapters["pwa-node"] = {
-  type = "server",
-  --host = "127.0.0.1",
-  host = "::1",
-  port = 8000,
-  executable = {
-    command = "node",
-    -- 💀 Make sure to update this path to point to your installation
-    args = {"C:\\Users\\JasonEvans\\Downloads\\js-debug-dap-v1.102.0\\js-debug\\src\\dapDebugServer.js", "8000"},
+require("overseer").setup()
+
+-- Set logging levels to debug why adapters are not working
+-- logs are saved in ~.cache/nvim/dap.log.
+dap.set_log_level("DEBUG")
+
+dap.adapters = {
+  ["pwa-node"] = {
+    type = "server",
+    port = "${port}",
+    executable = {
+      command = "js-debug-adapter",
+      args = {
+        "${port}",
+      },
+    },
+  },  
+}
+
+for _, language in ipairs({ "typescript", "javascript" }) do
+  dap.configurations[language] = {
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Launch file",
+      program = "${file}",
+      cwd = "${workspaceFolder}",
+    },
+    {
+      type = "pwa-node",
+      request = "attach",
+      name = "Attach to process ID",
+      processId = utils.pick_process,
+      cwd = "${workspaceFolder}",
+    },
+    {
+      type = "pwa-chrome",
+      request = "launch",
+      name = "Launch & Debug Chrome",
+      url = function()
+        local co = coroutine.running()
+        return coroutine.create(function()
+          vim.ui.input({
+            prompt = "Enter URL: ",
+            default = "http://localhost:3000",
+          }, function(url)
+            if url == nil or url == "" then
+              return
+            else
+              coroutine.resume(co, url)
+            end
+          end)
+        end)
+      end,
+      webRoot = vim.fn.getcwd(),
+      protocol = "inspector",
+      sourceMaps = true,
+      userDataDir = false,
+    },
+    {
+      name = "----- ↓ launch.json configs ↓ -----",
+      type = "",
+      request = "launch",
+    },
   }
-}
-
-require("dap").configurations.typescript = {
-  {
-    type = "pwa-node",
-    request = "launch",
-    name = "Launch file",
-    program = "${file}",
-    cwd = "${workspaceFolder}",
-  },
-}
-
---[[
-dap.configurations.typescript = {
-  {
-    type = 'pwa-node',
-    request = 'launch',
-    name = 'Launch file',
-    program = '${file}',
-    cwd = '${workspaceFolder}',
-    sourceMaps = true,
-	host = "localhost",
-    port = "1234",
-    protocol = 'inspector',
-    console = 'integratedTerminal',
-    runtimeExecutable = 'node',
-	  executable = {
-      command = "node",
-      -- 💀 Make sure to update this path to point to your installation
-      args = {"C:\\Users\\JasonEvans\\Downloads\\js-debug-dap-v1.102.0\\js-debug", "1234"},
-    },
-    runtimeArgs = {
-      '--loader',
-      'ts-node/esm',
-      '--experimental-specifier-resolution=node'
-    },
-    skipFiles = {
-      '<node_internals>/**',
-      'node_modules/**',
-    },
-  },
-}--]]
+end
 
 dapui.setup({
   icons = { expanded = "▾", collapsed = "▸", current_frame = "*" },
