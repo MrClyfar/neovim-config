@@ -43,6 +43,11 @@ require("dap").configurations.typescript = {
   },
 }
 
+-- full path to the interpreter where you ran: pip install debugpy
+local python = "C:\\Users\\JasonEvans\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"
+
+require("dap-python").setup(python)
+
 --[[
 dap.configurations.typescript = {
   {
