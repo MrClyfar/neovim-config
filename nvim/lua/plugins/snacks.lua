@@ -16,7 +16,12 @@ return {
         fullscreen = true, -- fullscreen for all pickers by default
       },
       sources = {
-	    grep = {
+	    files = {
+          hidden = true,      -- show dot-files
+          ignored = false,     -- show Git-ignored files
+        },
+	    grep = {		
+          ignored = false,
 		  hidden = true, -- Include hidden files in searches          
           case_sens = false, -- New! Define custom variable
           toggles = {

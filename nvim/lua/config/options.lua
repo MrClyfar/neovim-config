@@ -37,3 +37,11 @@ vim.opt.scrolloff = 10
 -- vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 
 --vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+
+-- Enable code lenses
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+  pattern = "*.go",
+  callback = function()
+    vim.lsp.codelens.refresh()
+  end,
+})

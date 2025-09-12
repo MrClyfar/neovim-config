@@ -2,23 +2,29 @@
 require("config.lazy")
 require("core.lsp")
 
-vim.cmd("colorscheme kanagawa")
-vim.cmd("let g:kanagawa_transparent_bg = 1")
+--vim.cmd.colorscheme("gruvdark")
+--vim.cmd("let g:gruvdark_transparent_bg = 1")
 
+-- kanagawa theme
+--vim.cmd("colorscheme kanagawa")
+--vim.cmd("let g:kanagawa_transparent_bg = 1")
+
+-- Nordfox theme
 --vim.cmd("colorscheme nordfox")
 --vim.cmd("let g:nordfox_transparent_bg = 1")
 
 --vim.cmd.colorscheme('naysayer')
 --vim.cmd("let g:naysayer_transparent_bg = 1")
 
---vim.cmd("colorscheme nightfox")
---vim.cmd("let g:nightfox_transparent_bg = 1")
+vim.cmd("colorscheme nightfox")
+vim.cmd("let g:nightfox_transparent_bg = 1")
 
 vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
 
 --vim.lsp.inline_completion.enable(true)
 
-local dap = require('dap')
+-- Configure debugging support.
+local dap = require("dap")
 local dapui = require("dapui")
 
 require("dap").adapters["pwa-node"] = {
@@ -29,8 +35,8 @@ require("dap").adapters["pwa-node"] = {
   executable = {
     command = "node",
     -- 💀 Make sure to update this path to point to your installation
-    args = {"C:\\Users\\JasonEvans\\Downloads\\js-debug-dap-v1.102.0\\js-debug\\src\\dapDebugServer.js", "8000"},
-  }
+    args = { "C:\\Users\\JasonEvans\\Downloads\\js-debug-dap-v1.102.0\\js-debug\\src\\dapDebugServer.js", "8000" },
+  },
 }
 
 require("dap").configurations.typescript = {
@@ -151,9 +157,5 @@ map("e", function()
   dapui.eval()
 end, "Eval")
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<F5>",
-  [[:lua require"osv".launch({port = 8086})<CR>]],
-  { noremap = true }
-)
+vim.api.nvim_set_keymap("n", "<F5>", [[:lua require"osv".launch({port = 8086})<CR>]], { noremap = true })
+
