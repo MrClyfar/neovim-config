@@ -9,6 +9,7 @@
 
 --vim.keymap('n', '<F8>', ':TagbarToggle<CR>', { noremap = true, silent = true })
 
+-- Mapping to close all floating windows that are associated with DAP.
 vim.keymap.set('n', '<leader>dx', function()
   for _, win in ipairs(vim.api.nvim_list_wins()) do
     local buf = vim.api.nvim_win_get_buf(win)
@@ -17,3 +18,7 @@ vim.keymap.set('n', '<leader>dx', function()
     end
   end
 end, { desc = "DAP: close all float windows" })
+
+-- Mapapingt to allow moving multiple lines of text up/down.
+vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
+vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
