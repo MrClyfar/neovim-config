@@ -48,3 +48,16 @@ In this repo, the key files and folders to focus on are:
    This is where each lsp is enabled. I also configure the virtual text options, so that warnings/errors appear in file windows.
 
 Notice in `init/lua` that I call `require("core.lsp")` to make sure that the lsp.lua file is processed.
+
+**18/9/2025**
+
+After I updated lazyvim to the latest version, I saw this error when starting neovim:
+
+>**treesitter-main** requires the `tree-sitter` CLI executable to be installed.
+Run `:checkhealth nvim-treesitter` for more information.
+
+To fix this issue I had to install the following:
+
+```bash
+npm install -g tree-sitter-cli
+```
