@@ -6,8 +6,8 @@ require("core.lsp")
 --vim.cmd("let g:gruvdark_transparent_bg = 1")
 
 -- kanagawa theme
---vim.cmd("colorscheme kanagawa")
---vim.cmd("let g:kanagawa_transparent_bg = 1")
+vim.cmd("colorscheme kanagawa")
+vim.cmd("let g:kanagawa_transparent_bg = 1")
 
 -- Nordfox theme
 --vim.cmd("colorscheme nordfox")
@@ -16,8 +16,8 @@ require("core.lsp")
 --vim.cmd.colorscheme('naysayer')
 --vim.cmd("let g:naysayer_transparent_bg = 1")
 
-vim.cmd("colorscheme nightfox")
-vim.cmd("let g:nightfox_transparent_bg = 1")
+--vim.cmd("colorscheme nightfox")
+--vim.cmd("let g:nightfox_transparent_bg = 1")
 
 vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
 
@@ -158,4 +158,3 @@ map("e", function()
 end, "Eval")
 
 vim.api.nvim_set_keymap("n", "<F5>", [[:lua require"osv".launch({port = 8086})<CR>]], { noremap = true })
-

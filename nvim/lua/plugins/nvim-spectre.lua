@@ -1,5 +1,7 @@
+ -- https://github.com/nvim-pack/nvim-spectre
+ -- Old name "windwp/nvim-spectre",
  return {
-    "windwp/nvim-spectre",
+    "nvim-pack/nvim-spectre",
     enabled = true,
     event = "BufRead",
     keys = {

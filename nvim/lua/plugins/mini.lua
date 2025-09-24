@@ -1,5 +1,7 @@
+-- https://github.com/nvim-mini/mini.nvim
+-- old name "echasnovski/mini.nvim"
 return {
-  "echasnovski/mini.nvim",
+  "nvim-mini/mini.nvim",
   version = false,
   config = function()
     require("mini.trailspace").setup()
