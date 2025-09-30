@@ -6,8 +6,8 @@ require("core.lsp")
 --vim.cmd("let g:gruvdark_transparent_bg = 1")
 
 -- kanagawa theme
-vim.cmd("colorscheme kanagawa")
-vim.cmd("let g:kanagawa_transparent_bg = 1")
+--vim.cmd("colorscheme kanagawa")
+--vim.cmd("let g:kanagawa_transparent_bg = 1")
 
 -- Nordfox theme
 --vim.cmd("colorscheme nordfox")
@@ -19,7 +19,20 @@ vim.cmd("let g:kanagawa_transparent_bg = 1")
 --vim.cmd("colorscheme nightfox")
 --vim.cmd("let g:nightfox_transparent_bg = 1")
 
+--vim.cmd("colorscheme jellybeans")
+--vim.cmd("let g:jellybeans_transparent_bg = 1")
+
+--vim.cmd("colorscheme jellybeans")
+vim.cmd("colorscheme jellybeans-light")
+
+vim.cmd("let g:jellybeans_transparent_bg = 1")
+
 vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
+
+vim.cmd("autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE")
+vim.cmd("autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE")
+vim.cmd("autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE")
+vim.cmd("autocmd VimEnter * hi NormalFloat ctermbg=NONE guibg=NONE")
 
 --vim.lsp.inline_completion.enable(true)
 

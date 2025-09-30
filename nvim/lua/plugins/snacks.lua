@@ -1,6 +1,14 @@
 return {
-  "folke/snacks.nvim",
+  "folke/snacks.nvim",  
   opts = {
+    styles = {
+      notification = {
+        border = "rounded",
+        wo = {
+          winblend = 0,
+		}
+      },
+    },
     terminal = {
       shell = { "C:\\Program Files\\Git\\bin\\bash.exe" },      
       win = {
@@ -10,7 +18,7 @@ return {
         -- height = 0.8,   -- optional
         border = "rounded", -- optional
       },
-    },
+    },	
     picker = {
       layout = {
         fullscreen = true, -- fullscreen for all pickers by default
@@ -30,7 +38,15 @@ return {
 		},
         explorer = {
           layout = { fullscreen = false }, -- override for explorer picker
-        }
+        },
+		-- Config settings for the notifications window.
+		notifications = {
+          win = {
+            wo = {
+              wrap = true,
+            },
+          },
+        },
       },
     }, 
   },
