@@ -29,6 +29,12 @@ vim.opt.splitright = true -- force all vertical splits to go to the right of cur
 
 vim.opt.updatetime = 100 -- faster completion (4000ms default)
 
+-- Highlight the current line.
+vim.opt.cursorline = true
+
+-- Highlight the current column.
+vim.opt.cursorcolumn = true
+
 --vim.opt.shiftwidth = 2                                  -- the number of spaces inserted for each indentation
 
 vim.opt.scrolloff = 10
