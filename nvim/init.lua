@@ -6,12 +6,16 @@ require("core.lsp")
 --vim.cmd("let g:gruvdark_transparent_bg = 1")
 
 -- kanagawa theme
---vim.cmd("colorscheme kanagawa")
---vim.cmd("let g:kanagawa_transparent_bg = 1")
+vim.cmd("colorscheme kanagawa")
+vim.cmd("let g:kanagawa_transparent_bg = 1")
 
 -- Nordfox theme
 --vim.cmd("colorscheme nordfox")
 --vim.cmd("let g:nordfox_transparent_bg = 1")
+
+-- Dayfox theme
+-- vim.cmd("colorscheme dayfox")
+-- vim.cmd("let g:dayfox_transparent_bg = 1")
 
 --vim.cmd.colorscheme('naysayer')
 --vim.cmd("let g:naysayer_transparent_bg = 1")
@@ -23,9 +27,9 @@ require("core.lsp")
 --vim.cmd("let g:jellybeans_transparent_bg = 1")
 
 --vim.cmd("colorscheme jellybeans")
-vim.cmd("colorscheme jellybeans-light")
+-- vim.cmd("colorscheme jellybeans-muted-light")
 
-vim.cmd("let g:jellybeans_transparent_bg = 1")
+-- vim.cmd("let g:jellybeans_transparent_bg = 1")
 
 vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
 
