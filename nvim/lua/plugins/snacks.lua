@@ -38,6 +38,8 @@ return {
 		},
         explorer = {
           layout = { fullscreen = false }, -- override for explorer picker
+          focus_current_file = true,
+          show_hidden = true,
         },
 		-- Config settings for the notifications window.
 		notifications = {
