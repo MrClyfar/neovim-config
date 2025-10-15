@@ -51,3 +51,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
     vim.lsp.codelens.refresh()
   end,
 })
+
+-- This might come in handy for v0.12
+-- Rounded corners on popups.
+--vim.opt.pumborder = "rounded"
