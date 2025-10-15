@@ -5,9 +5,17 @@ require("core.lsp")
 --vim.cmd.colorscheme("gruvdark")
 --vim.cmd("let g:gruvdark_transparent_bg = 1")
 
+-- Conifer theme.
+vim.cmd("colorscheme conifer")
+vim.cmd("let g:conifer_transparent_bg = 1")
+
+vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#232323" })
+vim.api.nvim_set_hl(0, "CursorLine", { fg = "#ffff00", bg = "#232323" })
+--vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#2d2d2d", fg = "#ffff00" })
+
 -- kanagawa theme
-vim.cmd("colorscheme kanagawa")
-vim.cmd("let g:kanagawa_transparent_bg = 1")
+-- vim.cmd("colorscheme kanagawa")
+-- vim.cmd("let g:kanagawa_transparent_bg = 1")
 
 -- Nordfox theme
 --vim.cmd("colorscheme nordfox")
