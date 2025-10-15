@@ -31,6 +31,9 @@ vim.cmd("let g:kanagawa_transparent_bg = 1")
 
 -- vim.cmd("let g:jellybeans_transparent_bg = 1")
 
+-- This might comei n handy when v0.12 is released. Set the popup background.
+vim.cmd("autocmd VimEnter * hi Pmenu guibg=bg")
+
 vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
 
 vim.cmd("autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE")
