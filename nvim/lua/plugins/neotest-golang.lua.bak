@@ -1,0 +1,17 @@
+return {
+  "fredrikaverpil/neotest-golang",
+  dependencies = {
+    "nvim-neotest/neotest",
+  },
+  config = function()
+    require("neotest").setup({
+      adapters = {
+        require("neotest-golang")({
+          go_test_args = { "-v" },
+          runner = "gotestsum",
+          dap_go_enabled = true,
+        }),
+      },
+    })
+  end,
+}

@@ -45,7 +45,7 @@ return {
       sources = {
         files = {
           hidden = true, -- show dot-files
-          ignored = false, -- show Git-ignored files
+          ignored = true, -- show Git-ignored files
         },
         grep = {
           ignored = false,
@@ -56,9 +56,10 @@ return {
           },
         },
         explorer = {
+          hidden = true, -- show dot-files
+          ignored = true, -- show Git-ignored files
           layout = { fullscreen = false }, -- override for explorer picker
           focus_current_file = true,
-          show_hidden = true,
         },
         -- Config settings for the notifications window.
         notifications = {
@@ -72,4 +73,3 @@ return {
     },
   },
 }
-

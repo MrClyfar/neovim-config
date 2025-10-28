@@ -1,0 +1,13 @@
+-- Example of correct nvim-treesitter setup with lazy.nvim
+return {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  -- The 'config' function is crucial for loading dependencies
+  config = function()
+    require("nvim-treesitter.configs").setup({
+      ensure_installed = { "go", "lua", "vim" },
+      highlight = { enable = true },
+      indent = { enable = true },
+    })
+  end,
+}

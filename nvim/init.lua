@@ -5,14 +5,59 @@ require("core.lsp")
 --vim.cmd.colorscheme("gruvdark")
 --vim.cmd("let g:gruvdark_transparent_bg = 1")
 
+-- Nanocode theme.
+-- vim.cmd("colorscheme nanode")
+-- vim.cmd("let g:nanode_transparent_bg = 1")
+--
+-- vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#6f6f6f" })
+-- vim.api.nvim_set_hl(0, "CursorLine", { fg = "#ffff00", bg = "#6f6f6f" })
+
+-- Nightgem theme.
+-- vim.cmd("colorscheme nightgem")
+-- vim.cmd("let g:nightgem_transparent_bg = 1")
+
+-- y9nika
+vim.cmd("colorscheme y9nika")
+vim.cmd("let g:y9nika_transparent_bg = 1")
+
+-- Alabaster
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--   callback = function()
+--     vim.api.nvim_set_hl(0, "@function", {
+--       fg = "#fbffc5",
+--       -- fg = "#ffec00",
+--     })
+--
+--     vim.api.nvim_set_hl(0, "Comment", {
+--       fg = "#f3adff",
+--       -- fg = "#ca75f2",
+--     })
+--
+--     vim.api.nvim_set_hl(0, "@variable", {
+--       fg = "#86b1ff",
+--       -- fg = "#4b92f3",
+--     })
+--
+--     vim.api.nvim_set_hl(0, "Number", {
+--       fg = "#9de253",
+--     })
+--   end,
+-- })
+--
+-- vim.cmd("colorscheme alabaster")
+-- vim.cmd("let g:alabaster_transparent_bg = 1")
+
+-- Matteblack theme.
+-- vim.cmd("colorscheme matteblack")
+-- vim.cmd("let g:matteblack_transparent_bg = 1")
+
 -- Conifer theme.
-vim.cmd("colorscheme conifer")
-vim.cmd("let g:conifer_transparent_bg = 1")
-
-vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#232323" })
-vim.api.nvim_set_hl(0, "CursorLine", { fg = "#ffff00", bg = "#232323" })
---vim.api.nvim_set_hl(0, "CursorLineNr", { bg = "#2d2d2d", fg = "#ffff00" })
-
+-- vim.cmd("colorscheme conifer")
+-- vim.cmd("let g:conifer_transparent_bg = 1")
+--
+-- vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#6f6f6f" })
+-- vim.api.nvim_set_hl(0, "CursorLine", { fg = "#ffff00", bg = "#6f6f6f" })
+--
 -- kanagawa theme
 -- vim.cmd("colorscheme kanagawa")
 -- vim.cmd("let g:kanagawa_transparent_bg = 1")
@@ -186,3 +231,19 @@ map("e", function()
 end, "Eval")
 
 vim.api.nvim_set_keymap("n", "<F5>", [[:lua require"osv".launch({port = 8086})<CR>]], { noremap = true })
+
+-- Configure the colouring for mini.nvim "diff" module.
+vim.api.nvim_set_hl(0, "MiniDiffOverAdd", { bg = "#2d5016", fg = "NONE" })
+vim.api.nvim_set_hl(0, "MiniDiffOverDelete", { bg = "#5c1a1a", fg = "NONE" })
+vim.api.nvim_set_hl(0, "MiniDiffOverContext", { bg = "#1a3a52", fg = "NONE" })
+vim.api.nvim_set_hl(0, "MiniDiffOverChangeLine", { bg = "#3a3a1a", fg = "NONE" })
+
+-- Link mini.diff highlight groups to your theme's colors
+-- vim.api.nvim_set_hl(0, "MiniDiffOverAdd", { link = "DiffAdd" })
+-- vim.api.nvim_set_hl(0, "MiniDiffOverDelete", { link = "DiffDelete" })
+-- vim.api.nvim_set_hl(0, "MiniDiffOverContext", { link = "DiffChange" })
+-- vim.api.nvim_set_hl(0, "MiniDiffOverChangeLine", { link = "DiffChange" })
+--
+-- vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "DiffAdd" })
+-- vim.api.nvim_set_hl(0, "MiniDiffSignChange", { link = "DiffChange" })
+-- vim.api.nvim_set_hl(0, "MiniDiffSignDelete", { link = "DiffDelete" })

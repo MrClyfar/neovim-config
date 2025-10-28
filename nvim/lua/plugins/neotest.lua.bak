@@ -1,0 +1,14 @@
+-- vim.keymap.set('n', '<Leader>gtest', ':lua require("neotest").run.run()<CR>', { desc = 'Run test' })
+return {
+  "nvim-neotest/neotest",
+  optional = true,
+  opts = {
+    adapters = {
+      ["neotest-golang"] = {
+        go_test_args = { "-v" },
+        runner = "gotestsum",
+        dap_go_enabled = true,
+      },
+    },
+  },
+}

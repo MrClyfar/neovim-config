@@ -1,0 +1,31 @@
+-- lua/plugins/neotest-go-fix.lua
+
+return {
+  -- This tells LazyVim to find the 'neotest' plugin
+  -- that is already defined by the 'extras'
+  "nvim-neotest/neotest",
+
+  -- By using 'opts' as a function, we can safely merge
+  -- our settings with the defaults from the LazyVim 'extras'.
+  opts = function(_, opts)
+    -- 'opts' is the table of options from the 'extras'.
+    -- We just need to add our Go adapter settings.
+
+    -- Ensure the adapters table exists just in case
+    opts.adapters = opts.adapters or {}
+
+    -- Set/overwrite the Go adapter config
+    opts.adapters["neotest-golang"] = {
+      -- This sets the runner, fixing the 2nd warning
+      runner = "gotestsum",
+
+      -- This sets custom args, fixing the '-race' ERROR
+      -- By providing our own list, we overwrite the default one.
+      go_test_args = { "-v" },
+    }
+
+    -- We return the modified 'opts' table.
+    -- LazyVim will then pass this to the plugin's 'config' function.
+    return opts
+  end,
+}
