@@ -5,5 +5,6 @@ return {
   version = false,
   config = function()
     require("mini.trailspace").setup()
+    require("mini.diff").setup()
   end,
 }
