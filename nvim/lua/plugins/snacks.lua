@@ -20,6 +20,11 @@ return {
     },
   },
   opts = {
+    gh = {
+      -- your gh configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
     styles = {
       notification = {
         border = "rounded",
@@ -43,6 +48,14 @@ return {
         fullscreen = true, -- fullscreen for all pickers by default
       },
       sources = {
+        gh_issue = {
+          -- your gh_issue picker configuration comes here
+          -- or leave it empty to use the default settings
+        },
+        gh_pr = {
+          -- your gh_pr picker configuration comes here
+          -- or leave it empty to use the default settings
+        },
         files = {
           hidden = true, -- show dot-files
           ignored = true, -- show Git-ignored files

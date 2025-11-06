@@ -55,3 +55,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
 -- This might come in handy for v0.12
 -- Rounded corners on popups.
 --vim.opt.pumborder = "rounded"
+
+-- To fix issue with nvim dap python plugin
+-- https://www.reddit.com/r/neovim/comments/1nw8luw/comment/nhiwf2p/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
+-- Note that this did not fix the issue, so for now I have renamed nvim-dap-python.lua to nvim-dap-python.lua.bak
+-- vim.opts.rocks.enabled = false

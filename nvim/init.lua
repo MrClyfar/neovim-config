@@ -16,9 +16,14 @@ require("core.lsp")
 -- vim.cmd("colorscheme nightgem")
 -- vim.cmd("let g:nightgem_transparent_bg = 1")
 
+-- Tokyonight theme.
+vim.cmd("colorscheme tokyonight-night")
+-- vim.cmd("let g:tokyonight-night_transparent_bg = 1")
+
+-- y9nika This is currently my favorite theme.
 -- y9nika
-vim.cmd("colorscheme y9nika")
-vim.cmd("let g:y9nika_transparent_bg = 1")
+-- vim.cmd("colorscheme y9nika")
+-- vim.cmd("let g:y9nika_transparent_bg = 1")
 
 -- Alabaster
 -- vim.api.nvim_create_autocmd("ColorScheme", {
@@ -123,9 +128,10 @@ require("dap").configurations.typescript = {
 }
 
 -- full path to the interpreter where you ran: pip install debugpy
-local python = "C:\\Users\\JasonEvans\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"
+-- local python = "C:\\Users\\JasonEvans\\AppData\\Local\\Programs\\Python\\Python313\\python.exe"
 
-require("dap-python").setup(python)
+-- Se my note about nvim-dap-python in options.lua
+-- require("dap-python").setup(python)
 
 --[[
 dap.configurations.typescript = {
