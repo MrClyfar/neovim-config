@@ -17,13 +17,12 @@ require("core.lsp")
 -- vim.cmd("let g:nightgem_transparent_bg = 1")
 
 -- Tokyonight theme.
-vim.cmd("colorscheme tokyonight-night")
+-- vim.cmd("colorscheme tokyonight-night")
 -- vim.cmd("let g:tokyonight-night_transparent_bg = 1")
 
 -- y9nika This is currently my favorite theme.
--- y9nika
--- vim.cmd("colorscheme y9nika")
--- vim.cmd("let g:y9nika_transparent_bg = 1")
+vim.cmd("colorscheme y9nika")
+vim.cmd("let g:y9nika_transparent_bg = 1")
 
 -- Alabaster
 -- vim.api.nvim_create_autocmd("ColorScheme", {
@@ -253,3 +252,18 @@ vim.api.nvim_set_hl(0, "MiniDiffOverChangeLine", { bg = "#3a3a1a", fg = "NONE" }
 -- vim.api.nvim_set_hl(0, "MiniDiffSignAdd", { link = "DiffAdd" })
 -- vim.api.nvim_set_hl(0, "MiniDiffSignChange", { link = "DiffChange" })
 -- vim.api.nvim_set_hl(0, "MiniDiffSignDelete", { link = "DiffDelete" })
+
+-- Wilder config
+-- local wilder = require("wilder")
+--
+-- wilder.set_option(
+--   "renderer",
+--   wilder.popupmenu_renderer(wilder.popupmenu_border_theme({
+--     highlights = {
+--       border = "rounded", -- highlight to use for the border
+--     },
+--     -- 'single', 'double', 'rounded' or 'solid'
+--     -- can also be a list of 8 characters, see :h wilder#popupmenu_border_theme() for more details
+--     border = "rounded",
+--   }))
+-- )
