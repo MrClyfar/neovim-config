@@ -2,6 +2,7 @@
 require("config.lazy")
 require("core.lsp")
 
+-- ==== THEMES ====
 --vim.cmd.colorscheme("gruvdark")
 --vim.cmd("let g:gruvdark_transparent_bg = 1")
 
@@ -21,8 +22,13 @@ require("core.lsp")
 -- vim.cmd("let g:tokyonight-night_transparent_bg = 1")
 
 -- y9nika This is currently my favorite theme.
-vim.cmd("colorscheme y9nika")
-vim.cmd("let g:y9nika_transparent_bg = 1")
+-- vim.cmd("colorscheme y9nika")
+-- vim.cmd("let g:y9nika_transparent_bg = 1")
+
+vim.cmd("colorscheme flexoki")
+vim.cmd("let g:flexoki_transparent_bg = 1")
+vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#3B3B3B" })
+vim.api.nvim_set_hl(0, "CursorLine", { fg = "#ffff00", bg = "#3B3B3B" })
 
 -- Alabaster
 -- vim.api.nvim_create_autocmd("ColorScheme", {
@@ -88,11 +94,9 @@ vim.cmd("let g:y9nika_transparent_bg = 1")
 
 -- vim.cmd("let g:jellybeans_transparent_bg = 1")
 
--- This might comei n handy when v0.12 is released. Set the popup background.
+-- This might come in handy when v0.12 is released. Set the popup background.
 vim.cmd("autocmd VimEnter * hi Pmenu guibg=bg")
-
 vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
-
 vim.cmd("autocmd VimEnter * hi NormalNC ctermbg=NONE guibg=NONE")
 vim.cmd("autocmd VimEnter * hi EndOfBuffer ctermbg=NONE guibg=NONE")
 vim.cmd("autocmd VimEnter * hi SignColumn ctermbg=NONE guibg=NONE")
@@ -195,20 +199,41 @@ local map = function(keys, func, desc)
 end
 
 map("c", dap.continue, "[C]ontinue")
+vim.keymap.set("n", "<F5>", function()
+  require("dap").continue()
+end, { desc = "[DAP] Continue" })
+
 -- TODO: is this really needed?
 -- map("a", function()
 --   require("dap").continue({ before = get_args })
 -- end, "Run with [A]rgs")
 map("i", dap.step_into, "Step [I]nto")
+vim.keymap.set("n", "<F8>", function()
+  require("dap").step_into()
+end, { desc = "Step [I]nto" })
+
 map("O", dap.step_out, "Step [O]ut")
+vim.keymap.set("n", "<C-F8>", function()
+  require("dap").step_out()
+end, { desc = "Step [O]ut" })
+
 map("o", dap.step_over, "Step Over")
+vim.keymap.set("n", "<S-F8>", function()
+  require("dap").step_over()
+end, { desc = "Step Over" })
+
 map("C", function()
   require("dap").run_to_cursor()
 end, "Run to [C]ursor")
 map("g", function()
   require("dap").goto_()
 end, "[G]o to line (no execute)")
+
 map("b", dap.toggle_breakpoint, "Toggle [B]reakpoint")
+vim.keymap.set("n", "<F9>", function()
+  require("dap").toggle_breakpoint()
+end, { desc = "Toggle [B]reakpoint" })
+
 map("B", function()
   dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
 end, "Set [B]reakpoint")
