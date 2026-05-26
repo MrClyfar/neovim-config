@@ -1,4 +1,4 @@
---https://github.com/yousefhadder/markdown-plus.nvim
+-- https://github.com/yousefhadder/markdown-plus.nvim
 return {
   "yousefhadder/markdown-plus.nvim",
   ft = "markdown", -- Load on markdown files by default

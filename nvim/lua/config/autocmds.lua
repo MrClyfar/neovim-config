@@ -40,4 +40,3 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
 --     vim.opt_local.cursorline = false
 --   end,
 -- })
-

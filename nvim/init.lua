@@ -3,8 +3,8 @@ require("config.lazy")
 require("core.lsp")
 
 -- ==== THEMES ====
---vim.cmd.colorscheme("gruvdark")
---vim.cmd("let g:gruvdark_transparent_bg = 1")
+-- vim.cmd.colorscheme("gruvdark")
+-- vim.cmd("let g:gruvdark_transparent_bg = 1")
 
 -- Nanocode theme.
 -- vim.cmd("colorscheme nanode")
@@ -25,10 +25,21 @@ require("core.lsp")
 -- vim.cmd("colorscheme y9nika")
 -- vim.cmd("let g:y9nika_transparent_bg = 1")
 
-vim.cmd("colorscheme flexoki")
-vim.cmd("let g:flexoki_transparent_bg = 1")
-vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#3B3B3B" })
-vim.api.nvim_set_hl(0, "CursorLine", { fg = "#ffff00", bg = "#3B3B3B" })
+-- Flexoki theme.
+-- vim.cmd("colorscheme flexoki")
+-- vim.cmd("let g:flexoki_transparent_bg = 1")
+-- vim.api.nvim_set_hl(0, "CursorColumn", { bg = "#3B3B3B" })
+-- vim.api.nvim_set_hl(0, "CursorLine", { fg = "#ffff00", bg = "#3B3B3B" })
+
+-- Zen theme.
+-- vim.cmd("colorscheme zen")
+-- vim.cmd("let g:zen_transparent_bg = 1")
+
+-- OKColors theme.
+-- vim.cmd("colorscheme okcolors")
+-- vim.cmd("colorscheme okcolors-smooth")
+-- -- vim.cmd("colorscheme okcolors-sharp")
+-- vim.cmd("let g:okcolors_transparent_bg = 1")
 
 -- Alabaster
 -- vim.api.nvim_create_autocmd("ColorScheme", {
@@ -69,8 +80,8 @@ vim.api.nvim_set_hl(0, "CursorLine", { fg = "#ffff00", bg = "#3B3B3B" })
 -- vim.api.nvim_set_hl(0, "CursorLine", { fg = "#ffff00", bg = "#6f6f6f" })
 --
 -- kanagawa theme
--- vim.cmd("colorscheme kanagawa")
--- vim.cmd("let g:kanagawa_transparent_bg = 1")
+vim.cmd("colorscheme kanagawa")
+vim.cmd("let g:kanagawa_transparent_bg = 1")
 
 -- Nordfox theme
 --vim.cmd("colorscheme nordfox")
