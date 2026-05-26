@@ -36,8 +36,8 @@ return {
     terminal = {
       shell = { "C:\\Program Files\\Git\\bin\\bash.exe" },
       win = {
-        --position = "float",
-        position = "bottom",
+        position = "float",
+        --position = "bottom",
         -- width = 0.8,    -- optional
         -- height = 0.8,   -- optional
         border = "rounded", -- optional
@@ -47,27 +47,27 @@ return {
       layout = {
         fullscreen = true, -- fullscreen for all pickers by default
       },
-      layouts = {
-        ivy_preview_top = {
-          preview = "main",
-          layout = {
-            box = "vertical",
-            backdrop = false,
-            width = 0,
-            height = 0.4,
-            position = "bottom",
-            border = "top",
-            title = " {title} {live} {flags}",
-            title_pos = "left",
-            { win = "input", height = 1, border = "bottom" },
-            {
-              box = "horizontal",
-              { win = "list", border = "none" },
-              { win = "preview", title = "{preview}", width = 0.6, border = "left" },
-            },
-          },
-        },
-      },
+      -- layouts = {
+      --   ivy_preview_top = {
+      --     preview = "main",
+      --     layout = {
+      --       box = "vertical",
+      --       backdrop = false,
+      --       width = 0,
+      --       height = 0.4,
+      --       position = "bottom",
+      --       border = "top",
+      --       title = " {title} {live} {flags}",
+      --       title_pos = "left",
+      --       {
+      --         box = "horizontal",
+      --         { win = "list", border = "none" },
+      --         { win = "preview", title = "{preview}", width = 0.6, border = "left" },
+      --       },
+      --       { win = "input", height = 1, border = "top" },
+      --     },
+      --   },
+      -- },
       sources = {
         gh_issue = {
           -- your gh_issue picker configuration comes here
@@ -78,7 +78,7 @@ return {
           -- or leave it empty to use the default settings
         },
         files = {
-          layout = "ivy_preview_top", -- override layout for files picker
+          -- layout = "ivy_preview_top", -- override layout for files picker
           hidden = true, -- show dot-files
           ignored = true, -- show Git-ignored files
         },

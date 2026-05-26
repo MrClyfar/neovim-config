@@ -3,6 +3,7 @@ return {
   "nvim-neotest/neotest",
   optional = true,
   opts = {
+    log_level = vim.log.levels.DEBUG, -- Add this line
     adapters = {
       ["neotest-golang"] = {
         go_test_args = { "-v" },

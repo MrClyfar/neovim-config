@@ -6,7 +6,6 @@
 --
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
-local dap_highlights = require("config.dap_ui_highlights")
 
 -- Remove the auto-commenting of new lines, when already in a comment.
 vim.api.nvim_create_autocmd("FileType", {
@@ -41,18 +40,3 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
 --     vim.opt_local.cursorline = false
 --   end,
 -- })
-
-local dap = require("dap")
-
-dap.listeners.after.event_initialized["dap_ui_highlights"] = function()
-  dap_highlights.set_debugger_highlights()
-end
-
-dap.listeners.before.event_terminated["dap_ui_highlights"] = function()
-  dap_highlights.reset_debugger_highlights()
-end
-
-dap.listeners.before.event_exited["dap_ui_highlights"] = function()
-  dap_highlights.reset_debugger_highlights()
-end
-

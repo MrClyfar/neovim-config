@@ -8,7 +8,7 @@ return {
           settings = {
             gopls = {
               -- The key setting to change the formatting tool
-              formatter = "gofmt", 
+              -- formatter = "gofmt",
             },
           },
         },
@@ -16,3 +16,4 @@ return {
     },
   },
 }
+
