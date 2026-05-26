@@ -1,0 +1,11 @@
+-- https://github.com/axsaucedo/neovim-power-mode
+return {
+  "axsaucedo/neovim-power-mode",
+  config = function()
+    require("power-mode").setup({
+      particles = { preset = "stars" },
+      shake = { mode = "none" },
+      combo = { enabled = false },
+    })
+  end,
+}
